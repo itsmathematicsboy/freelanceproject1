@@ -91,7 +91,7 @@ def get_rent_by_season(day):
 
 @st.cache_data
 def get_rent_cnt_by_season(day):
-    ssn_act = day.groupby('musim')['non aktif','aktif'].sum().reset_index()
+    ssn_act = day.groupby('musim')[['non aktif','aktif']].sum().reset_index()
     ssn_melted = ssn_act.melt(id_vars='musim', 
                           value_vars=['non aktif', 'aktif'], 
                           var_name='status', 
