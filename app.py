@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import seaborn as sns
 
-day = pd.read_csv(r'D:\freelance\day_cleaned.csv')
-hour = pd.read_csv(r'D:\freelance\hour_cleaned.csv')
+day = pd.read_csv(r'day_cleaned.csv')
+hour = pd.read_csv(r'hour_cleaned.csv')
 
 day['dteday'] = pd.to_datetime(day['dteday'])  
 hour['dteday'] = pd.to_datetime(hour['dteday'])
