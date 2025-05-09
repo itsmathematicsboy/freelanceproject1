@@ -116,7 +116,7 @@ def get_data1(day):
 
 @st.cache_data
 def get_data2(hour):
-    hr_final = hour.groupby('dteday')['temp','atemp','hum'].sum().reset_index()
+    hr_final = hour.groupby('dteday')[['temp','atemp','hum']].sum().reset_index()
     return hr_final
 monthly = get_rent_by_mth(day)
 melted_data = get_rent_by_hour(hour)
